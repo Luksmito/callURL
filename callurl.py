@@ -1,5 +1,6 @@
 from flask import Flask, request
 import requests
+import os
 
 app = Flask(__name__)
 
@@ -21,4 +22,4 @@ def receber_numero():
     return response.text, response.status_code
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=os.getenv("PORT", default=5000))   
