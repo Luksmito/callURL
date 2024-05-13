@@ -11,10 +11,10 @@ url = "https://:l-VrwV_BQC-XhdkhF6VYQA@tandem.autodesk.com/api/v1/timeseries/mod
 def hello():
     return "hello"
 
-@app.route('/receber_numero', methods=['POST'])
+@app.route('/receber_numero', methods=['GET'])
 def receber_numero():
     # Obtém o número do corpo da requisição
-    numero = request.form.get('numero')
+    numero = request.args.get('numero')
     
     # Constrói o corpo da nova requisição
     data = [{"umidade": numero}]
